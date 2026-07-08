@@ -1,0 +1,9 @@
+# Lista de emails para disparo do currículo
+# Adicione um email por linha (linhas com # são ignoradas)
+#
+# Exemplos:
+# rh@empresa.com.br
+# contato@techcompany.com
+
+# Teste
+teste@exemplo.com
