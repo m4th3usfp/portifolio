@@ -71,7 +71,7 @@ E estou expandindo para:
 
 ## Além do código
 
-Fora da programação, toco guitarra (desde 2004), treino musculação, cozinho e leio sobre tecnologia e qualidade de vida. Acredito que um bom desenvolvedor não é só quem escreve código limpo — é quem se comunica bem, trabalha em equipe e entende o problema antes de resolver.
+Fora da programação, cozinho e leio sobre tecnologia e qualidade de vida. Acredito que um bom desenvolvedor não é só quem escreve código limpo — é quem se comunica bem, trabalha em equipe e entende o problema antes de resolver.
 
 ---
 

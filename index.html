@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matheus Pizzinato — Desenvolvedor Fullstack</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;
+  background:#030712;color:#e2e8f0;line-height:1.7;
+  min-height:100vh
+}
+a{color:#60a5fa;text-decoration:none;transition:color .2s}
+a:hover{color:#93c5fd;text-decoration:underline}
+strong{color:#f1f5f9}
+em{color:#94a3b8}
+hr{border:none;border-top:1px solid #1e293b;margin:2rem 0}
+
+h1{font-size:1.75rem;color:#f1f5f9;margin-bottom:1rem}
+h2{font-size:1.35rem;color:#e2e8f0;margin:1.5rem 0 .75rem}
+h3{font-size:1.1rem;color:#cbd5e1;margin:1.25rem 0 .5rem}
+h4{font-size:1rem;color:#94a3b8;margin:1rem 0 .5rem}
+
+p{margin-bottom:1rem}
+ul,ol{margin-bottom:1rem;padding-left:1.5rem}
+li{margin-bottom:.35rem}
+code{background:#1e293b;padding:.125rem .375rem;border-radius:4px;font-size:.9em;color:#93c5fd}
+
+.table-wrap{overflow-x:auto;margin-bottom:1rem}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{padding:.5rem .75rem;text-align:left;border:1px solid #1e293b;vertical-align:top}
+th{background:#0f172a;color:#94a3b8;font-weight:600;white-space:nowrap}
+td{background:#111827}
+
+/* Layout */
+.container{max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+
+/* Hero */
+.hero{text-align:center;padding:3rem 1.5rem 2rem}
+.hero h1{font-size:2rem;margin:0}
+.hero .subtitle{color:#94a3b8;font-size:1.1rem;margin-top:.5rem}
+.hero .links{margin-top:1.25rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero .links a{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.5rem 1.25rem;border:1px solid #334155;border-radius:8px;
+  font-size:.9rem;color:#e2e8f0;text-decoration:none;transition:all .25s
+}
+.hero .links a:hover{
+  transform:translateY(-4px);box-shadow:0 10px 50px -8px rgba(96,165,250,.5);border-color:#60a5fa;text-decoration:none
+}
+.hero .links a .icon{font-size:1.15rem}
+
+/* Nav */
+.nav{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.nav-tab{
+  padding:.6rem 1.25rem;border:1px solid #334155;border-radius:8px;
+  background:transparent;color:#94a3b8;cursor:pointer;font-size:.9rem;font-weight:500;
+  transition:all .25s;font-family:inherit
+}
+.nav-tab.active{border-color:#60a5fa;color:#60a5fa;box-shadow:0 0 0 1px #60a5fa}
+.nav-tab:hover:not(.active){border-color:#475569;color:#e2e8f0;transform:translateY(-2px)}
+
+/* Sections */
+.section{display:none}
+.section.active{display:block}
+
+/* Depth tabs */
+.depth-tabs{display:flex;gap:.35rem;margin-bottom:1.25rem}
+.depth-tab{
+  padding:.35rem .85rem;border:1px solid #334155;border-radius:6px;
+  background:transparent;color:#64748b;cursor:pointer;font-size:.8rem;
+  transition:all .25s;font-family:inherit
+}
+.depth-tab.active{border-color:#34d399;color:#34d399;box-shadow:0 0 0 1px #34d399}
+.depth-tab:hover:not(.active){border-color:#475569;color:#94a3b8}
+
+.depth-content{display:none}
+.depth-content.active{display:block}
+.depth-content h1{display:none}
+
+/* Footer */
+footer{text-align:center;padding:2rem 1.5rem;color:#475569;font-size:.85rem}
+
+@media(max-width:640px){
+  .container{padding:1rem}
+  .hero{padding:2rem 1rem}
+  .hero h1{font-size:1.5rem}
+  .nav{gap:.35rem}
+  .nav-tab{font-size:.8rem;padding:.45rem .85rem}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>Matheus Pizzinato</h1>
+  <p class="subtitle">Desenvolvedor Fullstack &bull; Laravel &bull; PHP &bull; PostgreSQL &bull; Docker</p>
+  <div class="links">
+    <a href="https://github.com/m4th3usfp" target="_blank" rel="noopener">
+      <span class="icon">&#128279;</span> GitHub
+    </a>
+    <a href="https://github.com/m4th3usfp/pescador" target="_blank" rel="noopener">
+      <span class="icon">&#128279;</span> Pescador
+    </a>
+    <a href="https://linkedin.com/in/matheus-pizzinato" target="_blank" rel="noopener">
+      <span class="icon">&#128279;</span> LinkedIn
+    </a>
+    <a href="/curriculo-matheus-pizzinato.pdf" target="_blank" rel="noopener">
+      <span class="icon">&#128196;</span> Currículo
+    </a>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Navegação principal">
+  <button class="nav-tab active" data-section="o-que-eu-resolvo">O que eu resolvo</button><button class="nav-tab" data-section="jornada">Minha Jornada</button><button class="nav-tab" data-section="mais-sobre-mim">Mais sobre mim</button><button class="nav-tab" data-section="o-que-ja-fiz">O que já fiz</button>
+</nav>
+
+<main class="container">
+  <article id="section-o-que-eu-resolvo" class="section active">
+  <div class="depth-tabs"><button class="depth-tab active" data-depth="resumo">Resumo</button><button class="depth-tab" data-depth="artigo">Artigo</button><button class="depth-tab" data-depth="completo">Completo</button></div>
+  <div class="depth-content active" data-depth="resumo"><p>Crio aplicações web completas — do planejamento ao deploy — e também dou manutenção em sistemas existentes, corrigindo bugs e melhorando performance.</p></div><div class="depth-content" data-depth="artigo"><p>Como desenvolvedor fullstack, eu transformo necessidades em software funcional.</p><h2>Criação de sistemas do zero</h2><p>Projetos que nascem de uma ideia ou processo manual e se tornam aplicações web completas: banco de dados relacional, backend estruturado, frontend funcional, e deploy.</p><h2>Manutenção e evolução de sistemas existentes</h2><p>Nem todo projeto começa do zero. Também atuo em bases de código já existentes — corrigindo bugs, refatorando rotas problemáticas, resolvendo dívida técnica, e aplicando boas práticas sem quebrar o que já funciona.</p><h2>Automação de processos</h2><p>Processos manuais que dependem de planilha, papel ou email são mapeados e digitalizados em sistemas com regras de negócio, relatórios, e integrações.</p><h2>Principais tecnologias</h2><ul><li><strong>Backend:</strong> Laravel, PHP, APIs REST</li><li><strong>Banco:</strong> PostgreSQL, MySQL</li><li><strong>Frontend:</strong> HTML, CSS, JavaScript, TypeScript</li><li><strong>Infra:</strong> Docker, Git/GitHub, AWS (iniciando)</li><li><strong>Extras:</strong> Activity Log, geração de documentos, autenticação com Gates e roles</li></ul></div><div class="depth-content" data-depth="completo"><p>Sou desenvolvedor fullstack com 3 anos de estudo e prática contínua. Meu trabalho é pegar um problema real — seja uma ideia nova ou um sistema legado — e entregar uma solução em software que funciona de verdade.</p><hr><h2>1. Criação de sistemas do zero</h2><p>Quando alguém tem um processo manual (planilhas, papel, e-mails soltos) e quer transformar em um sistema web, eu cuido de todas as etapas:</p><h3>Levantamento</h3><p>Entendo o fluxo de trabalho, as regras de negócio, quem usa o sistema e o que precisam entregar.</p><h3>Modelagem de dados</h3><p>Projeto o banco relacional pensando em integridade, performance e crescimento futuro. PostgresSQL ou MySQL, dependendo do caso.</p><h3>Backend</h3><p>Desenvolvo a lógica de negócio em Laravel com PHP, organizando em controllers, services, actions e commands. Implemento autenticação, autorização com Gates/roles, relatórios, e integrações.</p><h3>Frontend</h3><p>Construo a interface com HTML, CSS e JavaScript/TypeScript — de forma que o usuário final consiga usar sem treinamento.</p><h3>Deploy</h3><p>Empacoto com Docker, versiono com Git/GitHub, e preparo o ambiente de produção.</p><p><strong>Exemplo real:</strong> O sistema <a href="https://github.com/m4th3usfp/pescador"><strong>Pescador</strong></a> — uma aplicação completa para gestão de colônias de pescadores, com cadastro de pescadores, geração de documentos (PIS, auto declaração, recibos), controle de pagamentos, upload de arquivos, backup automatizado, e geração de QR Code PIX para cobrança. Note como o sistema unifica o que antes era espalhado em papéis e planilhas.</p><hr><h2>2. Manutenção e evolução de sistemas existentes</h2><p>Nem todo trabalho começar com uma tela em branco. Também atuo em projetos que já existem:</p><h3>Correção de bugs</h3><p>Analiso o erro, encontro a causa raiz e aplico a correção sem efeitos colaterais.</p><h3>Refatoração</h3><p>Pego código legado — controllers de 1600 linhas, lógica duplicada, validações espalhadas — e reorganizo em camadas, extraio classes, unifico padrões.</p><h3>Dívida técnica</h3><p>Typo em migrations, valores hardcoded, autorização baseada em nome de usuário. Identifico e corrijo esses problemas estruturais.</p><h3>Performance</h3><p>Consultas N+1, falta de índices, locking desnecessário. Otimizo o banco e o código.</p><p><strong>Exemplo real:</strong> No <strong>Pescador IA</strong>, refatorei um controller de ~1638 linhas em 5 controllers especializados, corrigi 6 migrations com typos, removi autorização insegura baseada em nomes, troquei `FOR UPDATE` por `advisory lock` para compatibilidade com PostgreSQL, e corrigi 22 testes quebrados.</p><hr><h2>3. Automação de processos</h2><p>Mapeio processos manuais e os transformo em fluxos automatizados dentro do sistema:</p><ul><li>Geração de documentos Word/PDF com dados do banco</li><li>Envio de emails automáticos com relatórios e cobranças</li><li>Backup agendado com envio para nuvem (S3/R2)</li><li>Geração de QR Code PIX para pagamentos</li></ul><hr><h2>Tecnologias que uso</h2><h3>Domínio consolidado</h3><ul><li><strong>Laravel</strong> — controllers, commands, jobs, events, policies, gates, middlewares, actions</li><li><strong>PHP 8.x</strong> — OOP, traits, enums, type hints</li><li><strong>PostgreSQL / MySQL</strong> — migrations, relacionamentos, índices, transactions, advisory locks</li><li><strong>JavaScript / TypeScript</strong> — manipulação DOM, fetch, formulários dinâmicos</li><li><strong>HTML + CSS</strong> — layouts responsivos, componentes reutilizáveis</li><li><strong>Git / GitHub</strong> — versionamento, branches, commits semânticos</li><li><strong>Docker</strong> — containers para desenvolvimento e produção</li></ul><h3>Em evolução</h3><ul><li><strong>AWS</strong> — S3, R2 (Cloudflare), conceitos de cloud</li><li><strong>Activity Log (spatie/laravel-activitylog)</strong> — auditoria de ações do usuário</li><li><strong>Pest PHP</strong> — testes automatizados</li><li><strong>DomPDF</strong> — geração de documentos PDF</li></ul></div>
+</article><article id="section-jornada" class="section">
+  <div class="depth-tabs"><button class="depth-tab active" data-depth="resumo">Resumo</button><button class="depth-tab" data-depth="artigo">Artigo</button><button class="depth-tab" data-depth="completo">Completo</button></div>
+  <div class="depth-content active" data-depth="resumo"><p>Há três anos, decidi que queria ser desenvolvedor. Sem faculdade, sem experiência na área, só com vontade de aprender e um computador.</p><p>Comecei com lógica de programação, JavaScript e HTML. Depois mergulhei em PHP e Laravel, guiado por uma <a href="https://marcelao.dev">trilha de estudos prática com meu mentor</a>. Ali aprendi do zero — rotas, controllers, migrations, Docker, Git, banco de dados — até conseguir construir sistemas completos.</p><p>O grande marco foi o <a href="https://github.com/m4th3usfp/pescador"><strong>Pescador</strong></a>: um sistema real de gestão para colônias de pescadores que peguei com um controller monolítico de ~1638 linhas e refatorei por completo. Implementei autorização com roles, corrigi race conditions, automatizei documentos, backup, QR Code PIX, e entreguei 22 testes automatizados.</p><p>Também fiz freela de frontend PHP com código em produção e prazos reais, o que me ensinou na prática como é trabalhar com cliente.</p><p>Hoje trabalho com <strong>Laravel, PHP, PostgreSQL, JavaScript, Docker, Git</strong> e estou expandindo para <strong>Java, React e TypeScript</strong>. AWS e Vue.js também estão no radar.</p><p>Essa jornada é feita de código, documentação, café e resiliência. E está só começando.</p><hr><p><strong>Links úteis:</strong> <a href="https://github.com/m4th3usfp">GitHub</a> · <a href="https://github.com/m4th3usfp/pescador">Pescador</a> · <a href="/curriculo-matheus-pizzinato.pdf">Currículo</a></p></div><div class="depth-content" data-depth="artigo"><p>Há três anos comecei do zero: sem faculdade, sem experiência, só com um notebook e vontade de aprender. Fui guiado por uma <a href="https://marcelao.dev">trilha de estudos prática</a> que me levou da lógica de programação até sistemas completos em Laravel.</p><p>O ponto de virada foi o <a href="https://github.com/m4th3usfp/pescador"><strong>Pescador</strong></a>: refatorei um controller de ~1638 linhas, implementei autorização com roles, corrigi race conditions no PostgreSQL, automatizei documentos e backup, e entreguei 22 testes passando.</p><p>Também trabalhei em um <strong>sistema de atacado para vestuário</strong> (correção de bugs e novas funcionalidades) e num <strong>freela de frontend PHP</strong> com código em produção.</p><p>Hoje tenho domínio de <strong>Laravel, PHP, PostgreSQL, JavaScript, Docker, Git</strong> e estou expandindo para <strong>Java, React e TypeScript</strong>.</p><hr><p><strong>Links:</strong> <a href="https://github.com/m4th3usfp">GitHub</a> · <a href="https://github.com/m4th3usfp/pescador">Pescador</a> · <a href="/curriculo-matheus-pizzinato.pdf">Currículo</a></p></div><div class="depth-content" data-depth="completo"><h2>O começo</h2><p>Há três anos, eu não sabia o que era uma variável. Tinha 23 anos, nenhuma experiência em tecnologia, e trabalhava em empregos que não me realizavam — atendimento ao cliente, vendas, estoque. Até que decidi: quero ser desenvolvedor.</p><p>Sem faculdade, sem contatos na área, só com um notebook e disposição. Comecei pelo básico: lógica de programação, JavaScript, HTML, CSS. Cada conceito novo era um mundo. Cada "Hello World" me animava mais.</p><h2>A trilha de estudos</h2><p>Foi quando encontrei o <a href="https://marcelao.dev">marcelao.dev</a>, uma trilha de estudos completa montada por um desenvolvedor sênior. Ali tive um norte: sabia exatamente o que estudar em cada etapa.</p><p>A trilha cobriu:</p><ul><li><strong>Lógica de programação e algoritmos</strong></li><li><strong>PHP</strong> — do procedural ao Orientado a Objetos</li><li><strong>Laravel</strong> — rotas, controllers, Eloquent, migrations, blade</li><li><strong>Banco de dados</strong> — modelagem, SQL, PostgreSQL, MySQL</li><li><strong>Docker</strong> — containers, docker-compose, ambiente de desenvolvimento</li><li><strong>Git e GitHub</strong> — versionamento, branches, pull requests</li><li><strong>Boas práticas</strong> — SOLID, DRY, código limpo, organização de projetos</li></ul><p>Cada módulo tinha exercícios práticos e projetos para fixar. Não era só assistir vídeo — era codar.</p><h2>O grande projeto: Pescador</h2><p>O <a href="https://github.com/m4th3usfp/pescador"><strong>Pescador</strong></a> foi meu divisor de águas. Um sistema real de gestão para colônias de pescadores que peguei em andamento e precisei refatorar por completo.</p><h3>O que o sistema faz</h3><p>Cadastro de pescadores, geração automática de documentos (PIS, recibos, auto declaração), controle de pagamentos com QR Code PIX, backup automatizado para Cloudflare R2, auditoria de ações — tudo em uma plataforma web.</p><h3>A refatoração</h3><p>O código original tinha dívida técnica severa:</p><div class="table-wrap"><table><thead><tr><th>Problema</th><th>Solução</th></tr></thead><tbody><tr><td>Controller de 1638 linhas</td><td>Extraído em 5 controllers</td></tr><tr><td>Autorização por nome de usuário</td><td>Sistema de roles (admin/supervisor/user) + Gates</td></tr><tr><td>`env()` no código de produção</td><td>Substituído por `config()`</td></tr><tr><td>Migration com typo</td><td>Corrigido</td></tr><tr><td>Race condition no PostgreSQL</td><td>`pg_advisory_xact_lock`</td></tr><tr><td>22 testes quebrados</td><td>Todos corrigidos (Pest 3.x)</td></tr></tbody></table></div><h3>Resultado</h3><p>22 testes automatizados (59 assertions), código organizado, documentado, e um cliente usando o sistema de verdade.</p><h2>Freela de frontend</h2><p>Em 2023 fiz um freela de frontend PHP — site em produção com prazos reais e cliente de verdade. Aprendi na prática que código não é só sobre fazer funcionar, é sobre entregar valor sem quebrar o que já existe.</p><h2>Onde estou hoje</h2><p>Atualmente tenho domínio consolidado de:</p><ul><li><strong>Backend:</strong> Laravel, PHP 8.x, Eloquent, REST APIs, Artisan Commands, Gates/Middleware</li><li><strong>Frontend:</strong> HTML, CSS, JavaScript (ES6+), Blade</li><li><strong>Banco:</strong> PostgreSQL 17, MySQL, migrations, queries, transactions</li><li><strong>Infra:</strong> Docker, Git/GitHub, Linux</li><li><strong>Cloud:</strong> Cloudflare R2 (S3-compatible), Azure (fundamentos)</li><li><strong>Testes:</strong> Pest PHP</li></ul><p>E estou expandindo para:</p><ul><li><strong>Java</strong> — Spring Boot, APIs REST, ecossistema Java</li><li><strong>React</strong> — componentes, hooks, estado, integração com APIs</li><li><strong>TypeScript</strong> — tipagem estática, interfaces, generics</li><li><strong>AWS</strong> — S3, EC2, Lambda (em andamento)</li></ul><h2>Além do código</h2><p>Fora da programação, cozinho e leio sobre tecnologia e qualidade de vida. Acredito que um bom desenvolvedor não é só quem escreve código limpo — é quem se comunica bem, trabalha em equipe e entende o problema antes de resolver.</p><hr><p><strong>Links úteis:</strong> <a href="https://github.com/m4th3usfp">GitHub</a> · <a href="https://github.com/m4th3usfp/pescador">Pescador</a> · <a href="/curriculo-matheus-pizzinato.pdf">Currículo</a></p></div>
+</article><article id="section-mais-sobre-mim" class="section">
+  <div class="depth-tabs"><button class="depth-tab active" data-depth="resumo">Resumo</button><button class="depth-tab" data-depth="artigo">Artigo</button><button class="depth-tab" data-depth="completo">Completo</button></div>
+  <div class="depth-content active" data-depth="resumo"><p>Sou movido por aprender e criar soluções úteis. Gosto de comunicação, planejamento e trabalho em equipe. Fora do código, gosto de cozinhar, cuidar de plantas, estudar música, psicologia, ler sobre tecnologia e qualidade de vida.</p></div><div class="depth-content" data-depth="artigo"><h2>Como trabalho</h2><p>Sou um desenvolvedor que valoriza <strong>comunicação e planejamento</strong> antes de escrever código. Gosto de entender o problema, desenhar as etapas, e construir com solidez. Sou analítico e prudente, mas também me adapto rápido quando o contexto muda.</p><p>Trabalho bem em equipe: trocar ideia com outros devs, receber feedback, e colaborar faz parte do meu processo. Aprendi isso na prática com meu mentor e nos projetos que desenvolvi.</p><h2>O que me motiva</h2><ul><li><strong>Resolver problemas</strong> — entender a dor e construir a solução</li><li><strong>Aprender continuamente</strong> — toda semana tem algo novo</li><li><strong>Criar coisas úteis</strong> — software que as pessoas usam de verdade</li><li><strong>Deixar o código melhor</strong> — refatorar, organizar, pagar dívida técnica</li></ul><h2>Fora do código</h2><ul><li><strong>Leitura:</strong> tecnologia, qualidade de vida, desenvolvimento pessoal</li><li><strong>Cozinha:</strong> cozinhar virou um hobby — gosto de cuidar da alimentação</li><li><strong>Jardinagem:</strong> um hobby inesperado que me tira da frente do computador</li><li><strong>Vida social:</strong> conversas inteligentes sobre tecnologia e outros assuntos</li></ul></div><div class="depth-content" data-depth="completo"><h2>Minha jornada até aqui</h2><p>Entrei na área de tecnologia pelo <strong>curso técnico em Azure no SENAI</strong>. Antes disso, não tinha contato com programação. O curso abriu uma porta que eu nem sabia que existia.</p><p>A partir daí, fui guiado por um <strong>mentor desenvolvedor sênior</strong> que montou uma <a href="https://marcelao.dev">trilha de estudos completa (disponível em marcelao.dev)</a>. Ele me ensinou não só tecnologia, mas o que realmente importa: como pensar como um desenvolvedor, como resolver problemas, como se comunicar, e como entregar valor.</p><p>Foram 3 anos de estudo e prática contínua. Cada projeto foi um degrau: a API fake com CRUDCRUD me ensinou fundamentos de HTTP e JavaScript, o freela PHP me mostrou como é trabalhar com código em produção, e o Pescador IA foi onde tudo se consolidou — arquitetura, refatoração, boas práticas, trabalho com Docker, PostgreSQL, Laravel avançado.</p><hr><h2>Como trabalho</h2><h3>Planejamento antes de execução</h3><p>Gosto de entender o problema antes de escrever uma linha de código. Qual é a real necessidade? Quem vai usar? Qual o fluxo? Com isso claro, desenho as etapas e começo a construir.</p><h3>Comunicação é prioridade</h3><p>Não adianta código bonito se ninguém entende o que foi feito. Gosto de manter comunicação aberta com a equipe, alinhar expectativas, e documentar o que é relevante.</p><h3>Adaptação rápida</h3><p>Cada projeto tem seu contexto. Já trabalhei com código legado cheio de dívida técnica, com sistemas novos que precisavam sair do papel, e com integrações que exigiam aprender algo novo rapidamente. Me adapto ao que o projeto precisa.</p><h3>Colaboração</h3><p>Aprendi muito com mentorias e trocas com outros desenvolvedores. Levo isso pro trabalho: colaborar, revisar código, dar e receber feedback faz parte do processo.</p><h3>Cuidado com o legado</h3><p>Não basta entregar funcionalidade nova — o código precisa ser sustentável. Refatorar, pagar dívida técnica, deixar o ambiente melhor do que encontrei. É assim que projetos escalam.</p><hr><h2>O que me motiva</h2><div class="table-wrap"><table><thead><tr><th>Motivação</th><th>Por que</th></tr></thead><tbody><tr><td>Resolver problemas</td><td>Entender a dor real e construir a solução que funciona</td></tr><tr><td>Aprender sempre</td><td>Tecnologia muda rápido — parar de aprender é ficar pra trás</td></tr><tr><td>Criar coisas úteis</td><td>Software que as pessoas usam, que simplifica a vida delas</td></tr><tr><td>Código bem feito</td><td>Organização, boas práticas, padrões — o próximo dev agradece</td></tr></tbody></table></div><hr><h2>Fora do código</h2><h3>Leitura</h3><p>Leio sobre tecnologia (arquitetura de software, boas práticas, novos frameworks) e também sobre qualidade de vida, desenvolvimento pessoal, e assuntos que expandem a visão de mundo.</p><h3>Jardinagem</h3><p>Sim, jardinagem. Cuidar de plantas é um contraponto interessante ao trabalho digital — lida com tempo lento, paciência, e resultados que não se medem em commits.</p><h3>Vida social</h3><p>Gosto de conversas inteligentes sobre tecnologia e outros temas. Trocar ideia com pessoas que sabem mais, que pensam diferente, que trazem perspectivas novas.</p><hr><h2>O que busco</h2><ul><li>Trabalhar com <strong>Laravel, PHP, PostgreSQL</strong> e tecnologias web modernas</li><li>Fazer parte de um <strong>time que colabora e troca conhecimento</strong></li><li><strong>Resolver problemas reais</strong> que façam diferença</li><li><strong>Continuar aprendendo</strong> — com pessoas mais experientes, com desafios novos, com código bem feito</li><li><strong>Entregar valor</strong> — não só código, mas solução</li></ul></div>
+</article><article id="section-o-que-ja-fiz" class="section">
+  <div class="depth-tabs"><button class="depth-tab active" data-depth="resumo">Resumo</button><button class="depth-tab" data-depth="artigo">Artigo</button><button class="depth-tab" data-depth="completo">Completo</button></div>
+  <div class="depth-content active" data-depth="resumo"><p>Desenvolvi o <a href="https://github.com/m4th3usfp/pescador"><strong>Pescador</strong></a> (sistema completo de gestão para colônias de pescadores), fiz freela de frontend PHP, criei APIs de estudo com CRUDCRUD, e concluí curso técnico em Azure pelo SENAI. Tudo isso guiado por uma <a href="https://marcelao.dev">trilha de estudos prática com meu mentor</a>.</p></div><div class="depth-content" data-depth="artigo"><h2>Pescador IA — Sistema de Gestão para Colônias de Pescadores</h2><p>Meu maior e mais complexo projeto: <a href="https://github.com/m4th3usfp/pescador"><strong>Pescador</strong></a>. Uma aplicação web completa construída com Laravel 11 e PostgreSQL 17 que unifica o gerenciamento de colônias de pescadores.</p><p><strong>Funcionalidades:</strong> cadastro de pescadores, geração de documentos (PIS, auto declaração, recibos em Word), controle de pagamentos, upload de arquivos, backup automatizado com envio para Cloudflare R2, geração de QR Code PIX, e auditoria de ações com Activity Log.</p><p><strong>Destaques técnicos:</strong> refatorei um controller de ~1638 linhas em 5 controllers, corrigi race conditions com advisory locks, implementei sistema de roles e Gates, e resolvi todo o débito técnico acumulado (migrations com typos, env() no código, autorização por nome de usuário).</p><h2>Freela de Frontend PHP</h2><p>Trabalhei na otimização do frontend de um site existente para atender novas exigências do cliente. Foi meu primeiro contato com código em produção e com as dores reais de um projeto sendo usado por usuários.</p><h2>API Fake com CRUDCRUD</h2><p>Projeto de estudo para entender como funciona o ecossistema de APIs: fiz uma API simulada que consome dados do serviço CRUDCRUD, usando fetch() do JavaScript, transações JSON, protocolos HTTP e tratamento de erros. Foi onde consolidei minha base em comunicação cliente-servidor.</p><h2>Formação</h2><ul><li><strong>Curso Técnico em Azure</strong> — SENAI (onde comecei meu interesse pela área)</li><li><strong>Trilha de estudos mentorada</strong> por desenvolvedor sênior — percurso completo disponível em <a href="https://marcelao.dev">marcelao.dev</a> com todos os passos que segui</li><li><strong>Autodidata</strong> — aprendizado contínuo com documentação, fóruns, e prática em projetos reais</li></ul></div><div class="depth-content" data-depth="completo"><h2>Pescador IA</h2><h3>Visão geral</h3><p><a href="https://github.com/m4th3usfp/pescador"><strong>Pescador</strong></a>: sistema web completo para gestão de colônias de pescadores. Desenvolvido com <strong>Laravel 11</strong> e <strong>PostgreSQL 17</strong>, rodando em Docker. O sistema substitui processos que antes eram manuais (papel, planilhas, e-mails soltos) por uma plataforma unificada.</p><h3>Funcionalidades implementadas</h3><ul><li><strong>Cadastro de pescadores</strong> com validação de CPF, CEP, telefone, email — com proteção contra duplicatas</li><li><strong>Geração de documentos</strong>: PIS, auto declaração, recibos de anuidade — em formato Word (.docx), baixáveis individualmente ou em lote</li><li><strong>Controle de pagamentos</strong>: registro de mensalidades, status de pagamento, histórico financeiro por pescador</li><li><strong>Upload de arquivos</strong>: documentos anexados ao perfil do pescador, armazenados em Cloudflare R2 (S3-compatible)</li><li><strong>Backup automatizado</strong>: dump do PostgreSQL enviado para R2 e por email</li><li><strong>Geração de QR Code PIX</strong>: cobrança automatizada com QR Code enviado por email</li><li><strong>Auditoria</strong>: todas as ações registradas com spatie/laravel-activitylog</li><li><strong>Autenticação e autorização</strong>: sistema de roles (admin, supervisor, user) com Gates do Laravel</li></ul><h3>Engenharia e refatoração</h3><p>O projeto original tinha dívida técnica severa. As principais intervenções:</p><div class="table-wrap"><table><thead><tr><th>Problema</th><th>Solução</th></tr></thead><tbody><tr><td>Controller de 1638 linhas</td><td>Extraído em 5 controllers especializados</td></tr><tr><td>Autorização por nome de usuário</td><td>Sistema de roles + Gates</td></tr><tr><td>`env()` no código de produção</td><td>Substituído por `config()`</td></tr><tr><td>Migration com typo (`constrainded`)</td><td>Corrigido para `constrained`</td></tr><tr><td>Tabela `cities` criada depois de `users`</td><td>Ordem corrigida na migration</td></tr><tr><td>`getAuthPassword()` retornando coluna inexistente</td><td>Removido</td></tr><tr><td>Race condition com `lockForUpdate()` (proibido no PostgreSQL)</td><td>Substituído por `pg_advisory_xact_lock`</td></tr><tr><td>22 testes quebrados</td><td>Todos corrigidos (Pest 3.x, session, tipos)</td></tr><tr><td>Valores hardcoded nos commands</td><td>Centralizados em `config/colony.php`</td></tr><tr><td>QR Code com URL localhost</td><td>Embutido como base64 no email</td></tr></tbody></table></div><h3>Tecnologias aplicadas</h3><ul><li><strong>Backend:</strong> Laravel 11, PHP 8.x, Eloquent, Commands, Events, Gates, Middleware</li><li><strong>Banco:</strong> PostgreSQL 17, migrations, transactions, advisory locks</li><li><strong>Frontend:</strong> Blade, JavaScript, HTML, CSS, formulários com validação</li><li><strong>Infra:</strong> Docker, Git, Cloudflare R2 (S3), Gmail SMTP</li><li><strong>Testes:</strong> Pest PHP (22 testes, 59 assertions)</li><li><strong>Pacotes:</strong> spatie/laravel-activitylog, wandesnet/qrcode-pix-laravel, DomPDF, Laravel Mail</li></ul><hr><h2>Freela de Frontend PHP</h2><p><strong>Contexto:</strong> Um site existente precisava ser atualizado para atender novas exigências do cliente — o layout e a experiência do usuário não estavam mais adequados.</p><p><strong>O que fiz:</strong> Otimizei o frontend, ajustei a estrutura HTML/CSS, e integrei as novas funcionalidades solicitadas pelo cliente.</p><p><strong>Aprendizado:</strong> Foi meu primeiro contato com código rodando em produção, com prazos reais e com um cliente usando o sistema de verdade. Aprendi na prática sobre entregar valor sem quebrar o que já funciona.</p><hr><h2>API Fake com CRUDCRUD</h2><p><strong>Contexto:</strong> Projeto de estudo para entender o ecossistema de APIs REST — como os dados trafegam, como o frontend se comunica com o backend, e como tratar erros de rede e servidor.</p><p><strong>O que fiz:</strong> Criei uma API simulada que consome o serviço CRUDCRUD (API externa fake), usando JavaScript `fetch()` para fazer requisições GET, POST, PUT e DELETE, manipulando JSON e exibindo os resultados no DOM.</p><ul><li>Requisições HTTP e seus métodos</li><li>headers, body, status codes</li><li>JSON como formato de transporte</li><li>Tratamento de erros (timeout, 404, 500)</li><li>Assincronismo com Promises e async/await</li></ul><hr><h2>Formação</h2><h3>Curso Técnico em Azure — SENAI</h3><p>Foi meu primeiro contato formal com tecnologia. O curso abordou conceitos de cloud computing, serviços Microsoft Azure, e fundamentos de TI. Foi ali que comecei a me interessar por desenvolvimento.</p><h3><a href="https://marcelao.dev">Trilha de estudos mentorada (marcelao.dev)</a></h3><p>Uma trilha completa e prática montada pelo meu mentor, um desenvolvedor sênior experiente. O percurso está documentado em <a href="https://marcelao.dev">marcelao.dev</a> e contém todos os passos que segui para evoluir como desenvolvedor — desde lógica de programação até arquitetura de sistemas com Laravel.</p><h3>Autodidata</h3><p>A maior parte do meu conhecimento veio da prática: documentação oficial (Laravel, PHP, PostgreSQL), fóruns (Stack Overflow, Laravel Brasil), tutoriais, e principalmente construir projetos reais e quebrar a cabeça até funcionar.</p><hr><h2>Habilidades consolidadas</h2><div class="table-wrap"><table><thead><tr><th>Área</th><th>Tecnologias</th></tr></thead><tbody><tr><td>Backend</td><td>Laravel, PHP 8.x, Eloquent, REST APIs, <strong>Java (Spring Boot — iniciando)</strong></td></tr><tr><td>Frontend</td><td>HTML, CSS, JavaScript, TypeScript, Blade, <strong>React (iniciando)</strong></td></tr><tr><td>Banco</td><td>PostgreSQL, MySQL, migrations, SQL</td></tr><tr><td>Infra</td><td>Docker, Git/GitHub, Linux, Cloudflare R2</td></tr><tr><td>Cloud</td><td>Azure (fundamentos), AWS S3 (iniciando)</td></tr><tr><td>Testes</td><td>Pest PHP</td></tr><tr><td>Ferramentas</td><td>Activity Log, DomPDF, GitHub Actions (básico)</td></tr></tbody></table></div></div>
+</article>
+</main>
+
+<footer>
+  &copy; 2025 Matheus Pizzinato &mdash; Feito com PHP, paciência e café
+</footer>
+
+<script>
+(function(){
+  // Section navigation
+  const navTabs = document.querySelectorAll('.nav-tab');
+  const sections = document.querySelectorAll('.section');
+
+  function showSection(slug) {
+    navTabs.forEach(t => t.classList.toggle('active', t.dataset.section === slug));
+    sections.forEach(s => s.classList.toggle('active', s.id === 'section-' + slug));
+  }
+
+  navTabs.forEach(tab => {
+    tab.addEventListener('click', () => showSection(tab.dataset.section));
+  });
+
+  // Depth navigation within each section
+  document.querySelectorAll('.depth-tabs').forEach(tabGroup => {
+    const parent = tabGroup.parentElement;
+    const tabs = tabGroup.querySelectorAll('.depth-tab');
+    const contents = parent.querySelectorAll('.depth-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        const target = parent.querySelector('.depth-content[data-depth="' + tab.dataset.depth + '"]');
+        if (target) target.classList.add('active');
+      });
+    });
+  });
+
+  // Show first section by default
+  if (navTabs.length > 0) {
+    showSection(navTabs[0].dataset.section);
+  }
+
+  // Copy LinkedIn link
+  const linkedinBtn = document.querySelector('a[href*="linkedin"]');
+  if (linkedinBtn) {
+    linkedinBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      navigator.clipboard.writeText(this.href).then(() => {
+        const orig = this.innerHTML;
+        this.innerHTML = '<span class="icon">&#10003;</span> Copiado!';
+        setTimeout(() => this.innerHTML = orig, 2000);
+      }).catch(() => {
+        window.open(this.href, '_blank');
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
